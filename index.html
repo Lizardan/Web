@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Legions</title>
+    <title>Unity WebGL Player | Miner</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -22,20 +22,20 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Legions</div>
+        <div id="unity-build-title">Miner</div>
       </div>
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/LegionsWeb.loader.js";
+      var loaderUrl = buildUrl + "/DwarfMinerWeb.loader.js";
       var config = {
-        dataUrl: buildUrl + "/LegionsWeb.data",
-        frameworkUrl: buildUrl + "/LegionsWeb.framework.js",
-        codeUrl: buildUrl + "/LegionsWeb.wasm",
+        dataUrl: buildUrl + "/DwarfMinerWeb.data",
+        frameworkUrl: buildUrl + "/DwarfMinerWeb.framework.js",
+        codeUrl: buildUrl + "/DwarfMinerWeb.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Legions",
-        productVersion: "1.0",
+        companyName: "Dwarf",
+        productName: "Miner",
+        productVersion: "0.0.5",
       };
 
       var container = document.querySelector("#unity-container");
