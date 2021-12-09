@@ -1,1 +1,1 @@
-# LegionsWeb
+# Web
