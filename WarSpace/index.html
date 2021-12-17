@@ -16,7 +16,7 @@
     -o-background-size: 100%; /* Opera 9.6+ */
     background-size: 100%; /* Современные браузеры */
    }
-  #unity-container {
+  #canvas-div {
     border: 30px solid #40c4c8;
     padding: 0px;
     -moz-border-image: url(images/bg-image.png) 30 round round;
@@ -26,7 +26,9 @@
    }
   </style>
     <div id="unity-container" class="unity-desktop">
+      <div id="canvas-div">
       <canvas id="unity-canvas" width=1280 height=720></canvas>
+      </div>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
