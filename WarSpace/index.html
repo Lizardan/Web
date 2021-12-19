@@ -118,7 +118,6 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           console.log(progress);
-          print(progress);
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
