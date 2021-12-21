@@ -128,18 +128,6 @@
   // set a random value to the initial message value
   //document.getElementById('message').value = Math.random().toString(36).substring(2);
 
-
-        function TestJS1(){ // вызов метода js из юнити
-          login();
-        }
-
-        function TestJS2(){
-          console.log("111222");
-
-        //unityInstance.SendMessage('JSManager', 'TestUnity');  // вызов метода юнити из js
-        }
-
-
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
@@ -207,6 +195,7 @@
       canvas.style.background = "url('" + buildUrl + "/WarSpace.jpg') center / cover";
       loadingBar.style.display = "block";
 
+      var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -214,6 +203,7 @@
           document.getElementById("demo").innerHTML = 100 * progress + "%";
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
+          myGameInstance = unityInstance;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
@@ -222,6 +212,18 @@
           alert(message);
         });
       };
+
+
+              function TestJS1(){ // вызов метода js из юнити
+         myGameInstance.SendMessage('JSManager', 'TestUnity');
+        }
+
+        function TestJS2(){
+          console.log("111222");
+
+        //unityInstance.SendMessage('JSManager', 'TestUnity');  // вызов метода юнити из js
+        }
+
       document.body.appendChild(script);
     </script>
   </body>
