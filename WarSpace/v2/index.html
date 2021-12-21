@@ -125,23 +125,17 @@
     const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
     document.getElementById('current').textContent = message;
   }
-
   // set a random value to the initial message value
   //document.getElementById('message').value = Math.random().toString(36).substring(2);
 
 
-
-
-
-
-
-
-        function TestJS(){
+        function TestJS1(){ // вызов метода js из юнити
           login();
         }
 
-
-
+        function TestJS2(){
+        unityInstance.SendMessage('JSManager', 'TestUnity');  // вызов метода юнити из js
+        }
 
 
       var container = document.querySelector("#unity-container");
