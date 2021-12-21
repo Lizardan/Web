@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-  <p id="demo"></p>
+  <p id="demo" style="margin: 0;"></p>
   <style>
    body {
     background: url(images/BG.png) no-repeat;
@@ -118,7 +118,7 @@
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          document.getElementById("demo").innerHTML = progress;
+          document.getElementById("demo").innerHTML = 100 * progress + "%";
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
