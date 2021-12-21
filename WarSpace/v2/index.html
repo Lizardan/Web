@@ -128,15 +128,6 @@
   // set a random value to the initial message value
   //document.getElementById('message').value = Math.random().toString(36).substring(2);
 
-        function TestJS1(){ // вызов метода js из юнити
-          login();
-        }
-
-        function TestJS2(){
-         myGameInstance.SendMessage('JSManager', 'TestUnity');// вызов метода юнити из js
-        }
-
-
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
@@ -181,9 +172,6 @@
         showBanner: unityShowBanner,
       };
 
-
-      
-
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
       // Set this to false if you want to decouple this synchronization from
@@ -221,6 +209,17 @@
           alert(message);
         });
       };
+
+      
+        function TestJS1(){ // вызов метода js из юнити
+          login();
+        }
+
+        function TestJS2(){
+          GameInstance.SendMessage('JSManager', 'TestUnity');// вызов метода юнити из js
+        }
+
+
       document.body.appendChild(script);
     </script>
   </body>
