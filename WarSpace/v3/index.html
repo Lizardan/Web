@@ -141,9 +141,9 @@
       };
 
       
-        function LoginWax(){ // вызов метода js из юнити
+       async function LoginWax(){ 
          
-         var buf = login();
+         var buf = await login();
           GameInstance.SendMessage('JSManager', 'TestUnity',buf);
          
         }
