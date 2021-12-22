@@ -142,9 +142,12 @@
 
       
        async function LoginWax(){ 
-         
+
          var buf = await login();
-          GameInstance.SendMessage('JSManager', 'TestUnity',buf);
+        console.log(buf);
+
+
+          //GameInstance.SendMessage('JSManager', 'TestUnity',buf);
          
         }
 
