@@ -141,8 +141,11 @@
       };
 
       
-        function TestJS1(){ // вызов метода js из юнити
-          login();
+        function LoginWax(){ // вызов метода js из юнити
+         
+         var buf = login();
+          GameInstance.SendMessage('JSManager', 'TestUnity',buf);
+         
         }
 
         function TestJS2(){
