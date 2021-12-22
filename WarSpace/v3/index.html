@@ -139,16 +139,13 @@
           alert(message);
         });
       };
-
       
        async function LoginWax(){ 
 
          var buf = await login();
         console.log(buf);
 
-
-          //GameInstance.SendMessage('JSManager', 'TestUnity',buf);
-         
+          GameInstance.SendMessage('JSManager', 'TestUnity',buf.toString());
         }
 
 
