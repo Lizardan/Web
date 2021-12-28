@@ -156,6 +156,7 @@
       SendMessage('JSManager', 'LoginResponse', bufer.toString());
     }
     async function GetUser(username) {
+      console.log("333 " + username);
       var bufer = await getUser(UTF8ToString(username));
       SendMessage('JSManager', 'GetUserResponse', bufer.toString());
     }
