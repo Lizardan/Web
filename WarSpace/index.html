@@ -149,18 +149,13 @@
       });
     };
 
-
-
     async function Login() {
       var bufer = await loginButton();
       GameInstance.SendMessage('JSManager', 'LoginResponse', bufer.toString());
     }
     async function GetUser(username) {
-      console.log("333 " + username);
       var bufer = await getUser(username);
-      console.log("bufer " + bufer);
       var jsonString = JSON.stringify(bufer);
-      console.log("JSON.stringify " + jsonString);
       GameInstance.SendMessage('JSManager', 'GetUserResponse', jsonString.toString());
     }
     async function SetNft(slot_id, nft_id) {
