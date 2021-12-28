@@ -152,7 +152,9 @@
 
 
     async function Login(username) {
-      console.log("123 " + username);
+      console.log("333 " + username);
+      console.log("444 " + Pointer_stringify(username));
+      Pointer_stringify
       var bufer = await loginButton();
       SendMessage('JSManager', 'LoginResponse', bufer.toString());
     }
