@@ -151,17 +151,15 @@
 
 
 
-    async function Login(username) {
-      console.log("444 " + username);
-      console.log("666 " + UTF8ToString(username));
+    async function Login() {
       var bufer = await loginButton();
       SendMessage('JSManager', 'LoginResponse', bufer.toString());
     }
-    async function GetUser(slot_id, nft_id) {
+    async function GetUser(username) {
       var bufer = await getUser(UTF8ToString(username));
       SendMessage('JSManager', 'GetUserResponse', bufer.toString());
     }
-    async function SetNft(slot_id) {
+    async function SetNft(slot_id, nft_id) {
       var bufer = await setNft(slot_id, nft_id);
       SendMessage('JSManager', 'SetNftResponse', bufer.toString());
     }
