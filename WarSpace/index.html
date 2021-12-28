@@ -178,9 +178,8 @@
       GameInstance.SendMessage('JSManager', 'Get_imageResponse', bufer.toString());
     }
     async function Get_inventory(username) {
-      var bufer = await get_inventory(username);
-      var j = JSON.stringify(bufer);
-      GameInstance.SendMessage('JSManager', 'Get_inventoryResponse', j.toString());
+      var bufer = JSON.stringify(await get_inventory(username));
+      GameInstance.SendMessage('JSManager', 'Get_inventoryResponse', bufer.toString());
     }
 
 
