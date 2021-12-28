@@ -158,7 +158,10 @@
     async function GetUser(username) {
       console.log("333 " + username);
       var bufer = await getUser(username);
-      GameInstance.SendMessage('JSManager', 'GetUserResponse', bufer.toString());
+      console.log("bufer " + bufer);
+      var jsonString = JSON.stringify(bufer);
+      console.log("JSON.stringify " + jsonString);
+      GameInstance.SendMessage('JSManager', 'GetUserResponse', jsonString.toString());
     }
     async function SetNft(slot_id, nft_id) {
       var bufer = await setNft(slot_id, nft_id);
