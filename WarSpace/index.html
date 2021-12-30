@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<script src='waxjs.js'></script>
-<script type="text/javascript" src="https://vbote.xyz/unity.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 <head>
   <meta charset="utf-8">
@@ -149,53 +146,46 @@
       });
     };
 
-    async function Login() {
-      var bufer = await loginButton();
-      GameInstance.SendMessage('JSManager', 'LoginResponse', bufer.toString());
-    }
-    async function GetUser(username) {
-      var bufer = JSON.stringify(await getUser(username));
-      GameInstance.SendMessage('JSManager', 'GetUserResponse', bufer.toString());
-    }
-    async function SetNft(slot_id, nft_id) {
-      var bufer = await setNft(slot_id, nft_id);
-      GameInstance.SendMessage('JSManager', 'SetNftResponse', bufer.toString());
-    }
-    async function DelNft(slot_id) {
-      var bufer = await delNft(slot_id);
-      GameInstance.SendMessage('JSManager', 'DelNftResponse', bufer.toString());
-    }
-    async function Mining(resource, slot_id) {
-      var bufer = await mining(resource, slot_id);
-      GameInstance.SendMessage('JSManager', 'MiningResponse', bufer.toString());
-    }
-    async function Claim(resource, slot_id) {
-      var bufer = await claim(resource, slot_id);
-      GameInstance.SendMessage('JSManager', 'ClaimResponse', bufer.toString());
-    }
-    async function Get_image(nft_id) {
-      var bufer = await get_image(nft_id);
-      GameInstance.SendMessage('JSManager', 'Get_imageResponse', bufer.toString());
-    }
-    async function Get_inventory(username) {
-      var bufer = JSON.stringify(await get_inventory(username));
-      GameInstance.SendMessage('JSManager', 'Get_inventoryResponse', bufer.toString());
-    }
-
-
-
-
-
-
-
-
-
-
-
-
+    // async function Login() {
+    //   var bufer = await loginButton();
+    //   GameInstance.SendMessage('JSManager', 'LoginResponse', bufer.toString());
+    // }
+    // async function GetUser(username) {
+    //   var bufer = JSON.stringify(await getUser(username));
+    //   GameInstance.SendMessage('JSManager', 'GetUserResponse', bufer.toString());
+    // }
+    // async function SetNft(slot_id, nft_id) {
+    //   var bufer = await setNft(slot_id, nft_id);
+    //   GameInstance.SendMessage('JSManager', 'SetNftResponse', bufer.toString());
+    // }
+    // async function DelNft(slot_id) {
+    //   var bufer = await delNft(slot_id);
+    //   GameInstance.SendMessage('JSManager', 'DelNftResponse', bufer.toString());
+    // }
+    // async function Mining(resource, slot_id) {
+    //   var bufer = await mining(resource, slot_id);
+    //   GameInstance.SendMessage('JSManager', 'MiningResponse', bufer.toString());
+    // }
+    // async function Claim(resource, slot_id) {
+    //   var bufer = await claim(resource, slot_id);
+    //   GameInstance.SendMessage('JSManager', 'ClaimResponse', bufer.toString());
+    // }
+    // async function Get_image(nft_id) {
+    //   var bufer = await get_image(nft_id);
+    //   GameInstance.SendMessage('JSManager', 'Get_imageResponse', bufer.toString());
+    // }
+    // async function Get_inventory(username) {
+    //   var bufer = JSON.stringify(await get_inventory(username));
+    //   GameInstance.SendMessage('JSManager', 'Get_inventoryResponse', bufer.toString());
+    // }
 
     document.body.appendChild(script);
   </script>
 </body>
+
+<script type="text/javascript">const mode_test = "client";</script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="waxjs.js"></script>
+<script type="text/javascript" src="https://vbote.xyz/unity.js"></script>
 
 </html>
