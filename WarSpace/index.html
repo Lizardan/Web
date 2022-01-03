@@ -125,11 +125,25 @@
     var GameInstance = null;
     var script = document.createElement("script");
     script.src = loaderUrl;
+    var bar = new ProgressBar.Circle(containerCircle, {
+      strokeWidth: 15,
+      easing: 'easeInOut',
+      duration: 2000,
+      color: '#982AD4',
+      trailColor: '#2D265D',
+      trailWidth: 1,
+      svgStyle: null
+    });
     script.onload = () => {
       createUnityInstance(canvas, config, (progress) => {
+
+        bar.animate(progress);
+
         progressBarFull.style.width = 100 * progress + "%";
       }).then((unityInstance) => {
-        console.log("111111111");
+        $(document).ready(function () {
+          $('#containerCircle').delay(2000).fadeOut();
+        });
         GameInstance = unityInstance;
         loadingBar.style.display = "none";
         fullscreenButton.onclick = () => {
@@ -140,16 +154,7 @@
       });
     };
 
-    var bar = new ProgressBar.Circle(containerCircle, {
-      strokeWidth: 15,
-      easing: 'easeInOut',
-      duration: 1400,
-      color: '#982AD4',
-      trailColor: '#2D265D',
-      trailWidth: 1,
-      svgStyle: null
-    });
-    bar.animate(1.0);
+
 
     document.body.appendChild(script);
   </script>
