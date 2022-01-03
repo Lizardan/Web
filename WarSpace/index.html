@@ -7,6 +7,7 @@
   <title>Unity WebGL Player | WarSpace</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
+  <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
 </head>
 
 <body>
@@ -57,6 +58,7 @@
       <div id="unity-build-title">WarSpace</div>
     </div>
   </div>
+  <div id="container"></div>
   <script>
 
 
@@ -108,13 +110,6 @@
       showBanner: unityShowBanner,
     };
 
-    // By default Unity keeps WebGL canvas render target size matched with
-    // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-    // Set this to false if you want to decouple this synchronization from
-    // happening inside the engine, and you would instead like to size up
-    // the canvas DOM size and WebGL render target sizes yourself.
-    // config.matchWebGLToCanvasSize = false;
-
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       container.className = "unity-mobile";
       // Avoid draining fillrate performance on mobile devices,
@@ -146,38 +141,27 @@
       });
     };
 
-    // async function Login() {
-    //   var bufer = await loginButton();
-    //   GameInstance.SendMessage('JSManager', 'LoginResponse', bufer.toString());
-    // }
-    // async function GetUser(username) {
-    //   var bufer = JSON.stringify(await getUser(username));
-    //   GameInstance.SendMessage('JSManager', 'GetUserResponse', bufer.toString());
-    // }
-    // async function SetNft(slot_id, nft_id) {
-    //   var bufer = await setNft(slot_id, nft_id);
-    //   GameInstance.SendMessage('JSManager', 'SetNftResponse', bufer.toString());
-    // }
-    // async function DelNft(slot_id) {
-    //   var bufer = await delNft(slot_id);
-    //   GameInstance.SendMessage('JSManager', 'DelNftResponse', bufer.toString());
-    // }
-    // async function Mining(resource, slot_id) {
-    //   var bufer = await mining(resource, slot_id);
-    //   GameInstance.SendMessage('JSManager', 'MiningResponse', bufer.toString());
-    // }
-    // async function Claim(resource, slot_id) {
-    //   var bufer = await claim(resource, slot_id);
-    //   GameInstance.SendMessage('JSManager', 'ClaimResponse', bufer.toString());
-    // }
-    // async function Get_image(nft_id) {
-    //   var bufer = await get_image(nft_id);
-    //   GameInstance.SendMessage('JSManager', 'Get_imageResponse', bufer.toString());
-    // }
-    // async function Get_inventory(username) {
-    //   var bufer = JSON.stringify(await get_inventory(username));
-    //   GameInstance.SendMessage('JSManager', 'Get_inventoryResponse', bufer.toString());
-    // }
+
+
+
+
+
+    var bar = new ProgressBar.Circle(container, {
+      strokeWidth: 15,
+      easing: 'easeInOut',
+      duration: 1400,
+      color: '#982AD4',
+      trailColor: '#2D265D',
+      trailWidth: 1,
+      svgStyle: null
+    });
+    bar.animate(1.0);
+
+
+
+
+
+
 
     document.body.appendChild(script);
   </script>
@@ -187,5 +171,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="waxjs.js"></script>
 <script type="text/javascript" src="https://vbote.xyz/unity.js"></script>
+
 
 </html>
