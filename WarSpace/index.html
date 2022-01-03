@@ -60,11 +60,6 @@
   </div>
   <script>
 
-
-
-    // set a random value to the initial message value
-    //document.getElementById('message').value = Math.random().toString(36).substring(2);
-
     var container = document.querySelector("#unity-container");
     var canvas = document.querySelector("#unity-canvas");
     var loadingBar = document.querySelector("#unity-loading-bar");
@@ -72,12 +67,6 @@
     var fullscreenButton = document.querySelector("#unity-fullscreen-button");
     var warningBanner = document.querySelector("#unity-warning");
 
-    // Shows a temporary message banner/ribbon for a few seconds, or
-    // a permanent error message on top of the canvas if type=='error'.
-    // If type=='warning', a yellow highlight color is used.
-    // Modify or remove this function to customize the visually presented
-    // way that non-critical warnings and error messages are presented to the
-    // user.
     function unityShowBanner(msg, type) {
       function updateBannerVisibility() {
         warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -121,12 +110,11 @@
     }
     canvas.style.background = "url('" + buildUrl + "/WarSpace.jpg') center / cover";
     loadingBar.style.display = "block";
-
     var GameInstance = null;
     var script = document.createElement("script");
     script.src = loaderUrl;
     var bar = new ProgressBar.Circle(containerCircle, {
-      strokeWidth: 15,
+      strokeWidth: 14,
       easing: 'easeInOut',
       duration: 2000,
       color: '#982AD4',
@@ -136,9 +124,7 @@
     });
     script.onload = () => {
       createUnityInstance(canvas, config, (progress) => {
-
         bar.animate(progress);
-
         progressBarFull.style.width = 100 * progress + "%";
       }).then((unityInstance) => {
         $(document).ready(function () {
@@ -153,13 +139,9 @@
         alert(message);
       });
     };
-
-
-
     document.body.appendChild(script);
   </script>
 </body>
-
 <script type="text/javascript">const mode_test = "client";</script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="waxjs.js"></script>
